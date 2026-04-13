@@ -1,0 +1,8 @@
+{
+  "titulo": "El proyecto que me quita horas de vida pero me encanta",
+  "descripcion": "Mis colegas y yo somos unos frikis de los videojuegos. Concretamente del League of Leyends. Y como somos unos frikis, nos gusta hacer cosas de frikis. Así que decidí hacer una web para mostrar nuestras estadísticas en el juego, y así poder compararnos entre nosotros y con otros jugadores. Es un proyecto agotador y divertido, no hago más que añadir y añadir estadisticas y maneras de visualizarlo. Es un trabajo constante pero merece la pena por ver lo malos que somos jugando.",
+  "imagen": "img/lolillo.jpg",
+  "url": "https://carmanout.github.io/RepublicaBergamotaPD/",
+  "tecnologias": ["HTML", "JQuery", "SCSS"],
+  "ultima_actualizacion": "2026-02-27"
+}

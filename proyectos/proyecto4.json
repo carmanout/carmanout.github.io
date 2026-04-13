@@ -1,0 +1,8 @@
+{
+  "titulo": "Un regalo absurdo pero muy emocional",
+  "descripcion": "Por el 30 cumpleaños de mi hermano, decidí hacerle un regalo muy especial: una playlist personalizada con canciones que sus amigos y familiares les recordaban a él. Y qué mejor manera de darselo que con un juego web donde tenia que adivinar quién se acordaba de él por qué canción. Y al final, la playlist de Spotify recopliando todos los temas y muchos más. Le gustó tanto que todavia recuerdo su cara al jugarlo.",
+  "imagen": "https://wwwmarketing.scdn.co/static/images/premium/desktop-hero-ltr.png",
+  "url": "https://carmanout.github.io/cumplePlaylist/",
+  "tecnologias": ["HTML", "JavaScript", "CSS"],
+  "ultima_actualizacion": "2022-05-28"
+}

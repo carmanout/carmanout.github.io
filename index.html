@@ -1,17 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis proyectos - carmanout</title>
+    <title>Portafolio - carmanout</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <h1>Mis proyectos en GitHub Pages</h1>
-    <ul>
-        <li><a href="https://carmanout.github.io/nombre-de-tu-proyecto1/">Nombre de tu Proyecto 1</a></li>
-        <li><a href="https://carmanout.github.io/nombre-de-tu-proyecto2/">Nombre de tu Proyecto 2</a></li>
-        <li><a href="https://carmanout.github.io/nombre-de-tu-proyecto3/">Nombre de tu Proyecto 3</a></li>
-        <!-- Agrega aquí más proyectos -->
-    </ul>
+    <header class="hero">
+        <!-- Botón modo noche eliminado -->
+        <h1 class="hero-title">Carlos Carmona Gilo</h1>
+        <p class="hero-subtitle">Desarrollador Frontend · Apasionado por el desarrollo web y la música</p>
+        <a href="https://www.linkedin.com/in/carlos-carmona-gilo/" class="hero-cta" target="_blank" rel="noopener">Ver
+            LinkedIn</a>
+        <nav>
+            <a href="#about">Sobre mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="about">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQGg8ccD5e6-UA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697543294178?e=1777507200&v=beta&t=Z-DEbqwA77rlXd89Ky5v4rmMIe6Sk4qHGMXLd_w9x4Y"
+                alt="Carlos Carmona Gilo" class="about-img">
+            <div class="about-content">
+                <h2>Sobre mí</h2>
+                <p>
+                    ¡Hola! Soy Carlos Carmona Gilo, desarrollador frontend en aprendizaje continuo. Me especializo en crear
+                    webs modernas, visuales y responsivas. Aquí encontrarás mis proyectos de código más personales, date un paseo a ver qué te parecen. También puedes saber más sobre mi perfil
+                    profesional en <a href="https://www.linkedin.com/in/carlos-carmona-gilo/" target="_blank"
+                        rel="noopener">LinkedIn</a>.
+                </p>
+            </div>
+        </section>
+        <section id="proyectos">
+            <!-- Los proyectos se cargarán aquí dinámicamente -->
+        </section>
+        <section id="contacto" class="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme directamente a través de <a href="https://www.linkedin.com/in/carlos-carmona-gilo/"
+                    target="_blank" rel="noopener">LinkedIn</a>. Es lo suyo, si dejo aquí mi correo personal, ¡me van a llegar 1000 emails de spam y ahí si que tendré un verdadero problema!</p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2026 Carlos Carmona Gilo · Portafolio profesional · <a
+            href="https://www.linkedin.com/in/carlos-carmona-gilo/" target="_blank" rel="noopener"
+            style="color:#eebf63;">LinkedIn</a>
+    </footer>
+    <!-- Modal -->
+    <div id="modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="cerrarModal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <script>
+        // Funcionalidad modo día/noche eliminada
+        // Cargar todos los proyectos dinámicamente
+        async function obtenerArchivosProyectos() {
+            // En producción, esto se puede automatizar con un build script o API
+            // Aquí se listan manualmente por limitación de JS en el navegador
+            return [
+                'proyectos/proyecto1.json',
+                'proyectos/proyecto2.json',
+                'proyectos/proyecto3.json',
+                'proyectos/proyecto4.json',
+                'proyectos/proyecto5.json',
+                'proyectos/proyecto3 copy 3.json',
+                'proyectos/proyecto3 copy 4.json',
+                'proyectos/proyecto3 copy 5.json'
+            ];
+        }
+
+        function compararPorFecha(a, b) {
+            return new Date(b.ultima_actualizacion) - new Date(a.ultima_actualizacion);
+        }
+
+        async function cargarProyectos() {
+            const contenedor = document.getElementById('proyectos');
+            const archivos = await obtenerArchivosProyectos();
+            const proyectos = [];
+            for (const archivo of archivos) {
+                try {
+                    const res = await fetch(archivo);
+                    if (!res.ok) continue;
+                    const proyecto = await res.json();
+                    proyecto._archivo = archivo;
+                    proyectos.push(proyecto);
+                } catch (e) { }
+            }
+            proyectos.sort(compararPorFecha);
+            contenedor.innerHTML = '';
+            proyectos.forEach((proyecto, idx) => {
+                const card = document.createElement('div');
+                card.className = 'proyecto';
+                card.innerHTML = `
+                    <img src="${proyecto.imagen}" alt="${proyecto.titulo}">
+                    <div class="proyecto-content">
+                        <h2>${proyecto.titulo}</h2>
+                        <p>${proyecto.descripcion.length > 120 ? proyecto.descripcion.slice(0, 120) + '...' : proyecto.descripcion}</p>
+                        <div class="tecnologias">
+                            ${proyecto.tecnologias.map(t => `<span>${t}</span>`).join(' ')}
+                        </div>
+                        <button class="ver-mas" data-idx="${idx}">Ver más</button>
+                        <a href="${proyecto.url}" target="_blank" rel="noopener">Ver proyecto</a>
+                    </div>
+                `;
+                contenedor.appendChild(card);
+            });
+            // Modal
+            document.querySelectorAll('.ver-mas').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const idx = this.getAttribute('data-idx');
+                    mostrarModal(proyectos[idx]);
+                });
+            });
+        }
+
+        function mostrarModal(proyecto) {
+            const modal = document.getElementById('modal');
+            const body = document.getElementById('modal-body');
+            body.innerHTML = `
+                <h2>${proyecto.titulo}</h2>
+                <img src="${proyecto.imagen}" alt="${proyecto.titulo}" style="width:100%;max-height:220px;object-fit:cover;border-radius:1rem;">
+                <p style="margin-top:1rem;">${proyecto.descripcion}</p>
+                <div class="tecnologias" style="margin-bottom:1rem;">
+                    ${proyecto.tecnologias.map(t => `<span>${t}</span>`).join(' ')}
+                </div>
+                <p><strong>Última actualización:</strong> ${proyecto.ultima_actualizacion}</p>
+                <a href="${proyecto.url}" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;">Ir al proyecto</a>
+            `;
+            modal.style.display = 'flex';
+        }
+        document.getElementById('cerrarModal').onclick = function () {
+            document.getElementById('modal').style.display = 'none';
+        };
+        window.onclick = function (event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+        window.addEventListener('DOMContentLoaded', cargarProyectos);
+    </script>
 </body>
+
 </html>

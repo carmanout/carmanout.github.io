@@ -1,0 +1,8 @@
+{
+  "titulo": "El Estrechito, el negocio familiar",
+  "descripcion": "¿Has estado alguna vez en los Caños de Meca, en Cádiz? Pues si has estado, seguro que has pasado por el Estrechito, un pequeño chiringuito con encanto donde se come de maravilla. Este proyecto fue una necesidad de negocio para mis cuñados, y un autentico placer para mi. Está feo que yo lo diga, pero es fácilmente el mejor sitio para comer en Cádiz en verano. En esta web puedes ver dónde se encuentra, sus platos más pedidos, y ver dónde suelo pasar mis vacaciones: con mis cuñados en mi lugar favorito del planeta. ¡Si vas de mi parte, seguro que mi cuñada te invitará a algo sabroso!",
+  "imagen": "https://elestrechito.com/playacaños.jpg",
+  "url": "https://elestrechito.com",
+  "tecnologias": ["HTML", "CSS", "JavaScript"],
+  "ultima_actualizacion": "2026-04-02"
+}

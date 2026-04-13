@@ -1,0 +1,8 @@
+{
+  "titulo": "Mis dos frikadas unidas: Dragones y Mazmorras y Pokémon",
+  "descripcion": "Aunque visualmente no lo sea, esta web es una maravilla. Hace una combinatoria super exigente de dos bases de datos muy diferentes, el compendio de monstruos de Dragones y Mazmorras y la base de datos de Pokémon. Así, de manera dinámica, se crea una web donde ambos mundos se conectan y se pueden usar Pokémon dentro del universo de D&D. Sé que no parece gran cosa, pero fue un proyecto de mucho esfuerzo y que a día de hoy usa gente que ni siquiera yo conozco, lo cual me parece fascinante.",
+  "imagen": "https://www.espadayescudo.com/wp-content/uploads/2025/09/conoce-pokednd-battle-tactics.webp",
+  "url": "https://carmanout.github.io/PokeDnD/",
+  "tecnologias": ["HTML", "JavaScript", "CSS"],
+  "ultima_actualizacion": "2023-10-15"
+}
