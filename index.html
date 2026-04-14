@@ -2,22 +2,49 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - carmanout</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap"
-        rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portafolio de Carlos Carmona Gilo - Desarrollador Frontend</title>
+        <meta name="description" content="Portafolio profesional de Carlos Carmona Gilo, desarrollador frontend. Proyectos, experiencia y contacto. Desarrollo web moderno, visual y responsivo.">
+        <meta name="keywords" content="Carlos Carmona Gilo, portafolio, desarrollador frontend, desarrollo web, proyectos, programación, JavaScript, HTML, CSS, React, música, España">
+        <meta name="author" content="Carlos Carmona Gilo">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Portafolio de Carlos Carmona Gilo - Desarrollador Frontend">
+        <meta property="og:description" content="Descubre los proyectos y experiencia de Carlos Carmona Gilo, desarrollador frontend apasionado por la web y la música.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://carmanout.github.io/">
+        <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4D03AQGg8ccD5e6-UA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697543294178?e=1777507200&v=beta&t=Z-DEbqwA77rlXd89Ky5v4rmMIe6Sk4qHGMXLd_w9x4Y">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Portafolio de Carlos Carmona Gilo - Desarrollador Frontend">
+        <meta name="twitter:description" content="Descubre los proyectos y experiencia de Carlos Carmona Gilo, desarrollador frontend apasionado por la web y la música.">
+        <meta name="twitter:image" content="https://media.licdn.com/dms/image/v2/D4D03AQGg8ccD5e6-UA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697543294178?e=1777507200&v=beta&t=Z-DEbqwA77rlXd89Ky5v4rmMIe6Sk4qHGMXLd_w9x4Y">
+        <!-- Datos estructurados JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Carlos Carmona Gilo",
+            "url": "https://carmanout.github.io/",
+            "image": "https://media.licdn.com/dms/image/v2/D4D03AQGg8ccD5e6-UA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697543294178?e=1777507200&v=beta&t=Z-DEbqwA77rlXd89Ky5v4rmMIe6Sk4qHGMXLd_w9x4Y",
+            "sameAs": [
+                "https://www.linkedin.com/in/carlos-carmona-gilo/"
+            ],
+            "jobTitle": "Desarrollador Frontend",
+            "description": "Desarrollador frontend especializado en webs modernas, visuales y responsivas."
+        }
+        </script>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap"
+                rel="stylesheet">
 </head>
 
 <body>
     <header class="hero">
-        <!-- Botón modo noche eliminado -->
-        <h1 class="hero-title">Carlos Carmona Gilo</h1>
+        <h1 class="hero-title">Portafolio de Carlos Carmona Gilo</h1>
         <p class="hero-subtitle">Desarrollador Frontend · Apasionado por el desarrollo web y la música</p>
-        <a href="https://www.linkedin.com/in/carlos-carmona-gilo/" class="hero-cta" target="_blank" rel="noopener">Ver
-            LinkedIn</a>
-        <nav>
+        <a href="https://www.linkedin.com/in/carlos-carmona-gilo/" class="hero-cta" target="_blank" rel="noopener">Ver LinkedIn</a>
+        <nav aria-label="Navegación principal">
             <a href="#about">Sobre mí</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#contacto">Contacto</a>
@@ -26,7 +53,7 @@
     <main>
         <section id="about" class="about">
             <img src="https://media.licdn.com/dms/image/v2/D4D03AQGg8ccD5e6-UA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697543294178?e=1777507200&v=beta&t=Z-DEbqwA77rlXd89Ky5v4rmMIe6Sk4qHGMXLd_w9x4Y"
-                alt="Carlos Carmona Gilo" class="about-img">
+                alt="Foto de perfil de Carlos Carmona Gilo, desarrollador frontend" class="about-img">
             <div class="about-content">
                 <h2>Sobre mí</h2>
                 <p>
@@ -38,18 +65,25 @@
             </div>
         </section>
         <section id="proyectos">
-            <!-- Los proyectos se cargarán aquí dinámicamente -->
+            <h2>Proyectos destacados</h2>
+            <div id="proyectos-lista"><!-- Los proyectos se cargarán aquí dinámicamente --></div>
         </section>
         <section id="contacto" class="contacto">
             <h2>Contacto</h2>
             <p>Puedes contactarme directamente a través de <a href="https://www.linkedin.com/in/carlos-carmona-gilo/"
-                    target="_blank" rel="noopener">LinkedIn</a>. Es lo suyo, si dejo aquí mi correo personal, ¡me van a llegar 1000 emails de spam y ahí si que tendré un verdadero problema!</p>
+                target="_blank" rel="noopener">LinkedIn</a>. Si tienes una propuesta profesional, ¡estaré encantado de escucharla!</p>
         </section>
     </main>
     <footer>
         &copy; 2026 Carlos Carmona Gilo · Portafolio profesional · <a
             href="https://www.linkedin.com/in/carlos-carmona-gilo/" target="_blank" rel="noopener"
             style="color:#eebf63;">LinkedIn</a>
+        <nav aria-label="Enlaces legales">
+            <a href="/">Inicio</a>
+            <a href="#about">Sobre mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
     </footer>
     <!-- Modal -->
     <div id="modal" class="modal" style="display:none;">
@@ -79,7 +113,7 @@
         }
 
         async function cargarProyectos() {
-            const contenedor = document.getElementById('proyectos');
+            const contenedor = document.getElementById('proyectos-lista');
             const archivos = await obtenerArchivosProyectos();
             const proyectos = [];
             for (const archivo of archivos) {
