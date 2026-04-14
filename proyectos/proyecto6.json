@@ -1,0 +1,8 @@
+{
+  "titulo": "Mi banda de música: Askomedas",
+  "descripcion": "Si no me ves en las fotos, es porque esta web se hizo antes de que yo formara parte de la banda. Ahora soy el guitarrista, pero la web se hizo para promocionar a la banda en general. Es una web sencilla, pero con un diseño muy cuidado y que refleja muy bien el estilo de la banda. Nos encanta jugar con los temas de wordpress, ¡así que encontraras muchas tonterías incrustadas!",
+  "imagen": "https://i0.wp.com/askomedas.com/wp-content/uploads/2023/10/Portada.png?fit=552%2C559&ssl=1",
+  "url": "https://askomedas.com",
+  "tecnologias": ["WordPress", "PHP", "CSS"],
+  "ultima_actualizacion": "2026-03-15"
+}
