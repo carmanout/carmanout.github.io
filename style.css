@@ -141,10 +141,25 @@ section {
 
 /* --- Proyectos --- */
 #proyectos {
-  display: flex;
-  flex-wrap: wrap;
+  /* Mantener el layout de la sección */
+}
+
+#proyectos-lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  #proyectos-lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #proyectos-lista {
+    grid-template-columns: 1fr;
+  }
 }
 .proyecto {
   background: var(--color-card);
